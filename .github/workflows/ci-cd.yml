@@ -241,7 +241,7 @@ jobs:
           echo "Esperando que el servicio alcance estado estable..."
           aws ecs wait services-stable \
             --cluster ${{ secrets.ECS_CLUSTER }} \
-            --services ${{ secrets.ECS_SERVICE_APP }} ${{ secrets.ECS_SERVICE_NGINX }}
+            --services ${{ secrets.ECS_SERVICE_APP }}
           echo "✅ Servicios ECS estables y corriendo"
 
           # Mostrar estado final
