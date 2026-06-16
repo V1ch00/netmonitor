@@ -248,7 +248,7 @@ jobs:
           echo ""
           echo "── Estado final del cluster ──"
           aws ecs describe-services \
-            --cluster  ${{ secrets.ECS_CLUSTER }} \
-            --services ${{ secrets.ECS_SERVICE_APP }} ${{ secrets.ECS_SERVICE_NGINX }} \
+            --cluster ${{ secrets.ECS_CLUSTER }} \
+            --services ${{ secrets.ECS_SERVICE_APP }} \
             --query "services[].{Nombre:serviceName, Estado:status, Corriendo:runningCount, Deseado:desiredCount}" \
             --output table
